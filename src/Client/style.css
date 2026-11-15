@@ -1,20 +1,21 @@
 :root {
-  --bg: #050505;
-  --green: #00ff41;
-  --red: #ff3b3b;
-  --yellow: #ffe600;
+  --bg: linear-gradient(135deg, #27224b 0%, #1e1a38 100%);
+  --surface: #28234a;
+  --inset: #1d1936;
+  --text: #ffffff;
+  --muted: #9e9ac2;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: monospace;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 body {
   background: var(--bg);
-  color: var(--green);
+  color: var(--text);
   height: 100vh;
   overflow: hidden;
 }
@@ -23,12 +24,18 @@ header {
   display: flex;
   justify-content: space-between;
   padding: 10px 14px;
-  border-bottom: 1px solid var(--green);
   font-size: 12px;
+  background: var(--surface);
+  border-radius: 20px;
+  box-shadow: 8px 8px 18px rgba(13, 10, 28, 0.65), -6px -6px 16px rgba(54, 47, 99, 0.4);
 }
 
 .warn {
-  color: var(--red);
+  color: #ff6b84;
+  background: rgba(255, 107, 132, 0.12);
+  padding: 2px 8px;
+  border-radius: 10px;
+  display: inline-block;
 }
 
 #joinScreen {
@@ -40,36 +47,55 @@ header {
 
 .box {
   width: 340px;
-  border: 1px solid var(--green);
   padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 12px;
-  background: #0a0a0a;
-  box-shadow: 0 0 10px rgba(0,255,65,0.2);
+  background: var(--surface);
+  border-radius: 24px;
+  box-shadow: 8px 8px 18px rgba(13, 10, 28, 0.65), -6px -6px 16px rgba(54, 47, 99, 0.4);
 }
 
 .box input {
   width: 100%;
   padding: 10px;
-  background: #111;
-  border: 1px solid var(--green);
-  color: var(--green);
+  background: var(--inset);
+  border-radius: 12px;
+  color: var(--text);
   outline: none;
+  box-shadow: inset 4px 4px 10px rgba(13, 10, 28, 0.75), inset -3px -3px 8px rgba(54, 47, 99, 0.35);
+}
+
+.box input:focus {
+  box-shadow: inset 4px 4px 10px rgba(13, 10, 28, 0.75), inset -3px -3px 8px rgba(54, 47, 99, 0.35), 0 0 12px rgba(157, 78, 221, 0.3);
 }
 
 button {
-  border: 1px solid var(--green);
-  background: transparent;
-  color: var(--green);
+  border-radius: 14px;
+  background: var(--surface);
+  color: var(--text);
   padding: 10px;
   cursor: pointer;
   transition: 0.2s;
+  box-shadow: 8px 8px 18px rgba(13, 10, 28, 0.65), -6px -6px 16px rgba(54, 47, 99, 0.4);
 }
 
 button:hover {
-  background: var(--green);
-  color: black;
+  background: #322c58;
+}
+
+button:active {
+  box-shadow: inset 4px 4px 10px rgba(13, 10, 28, 0.75), inset -3px -3px 8px rgba(54, 47, 99, 0.35);
+}
+
+.box button:last-of-type {
+  border-radius: 14px;
+  background: linear-gradient(135deg, #7b2cbf 0%, #9d4edd 50%, #c77dff 100%);
+  color: #ffffff;
+  font-weight: bold;
+  padding: 10px;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(157, 78, 221, 0.45);
 }
 
 .hidden {
@@ -85,38 +111,60 @@ button:hover {
   flex: 3;
   padding: 10px;
   overflow-y: auto;
-  border-right: 1px solid var(--green);
+  border-radius: 20px;
+  background: var(--inset);
+  box-shadow: inset 4px 4px 10px rgba(13, 10, 28, 0.75), inset -3px -3px 8px rgba(54, 47, 99, 0.35);
 }
 
 .sideBox {
   flex: 1;
   padding: 10px;
+  border-radius: 20px;
+  background: var(--surface);
+  box-shadow: 8px 8px 18px rgba(13, 10, 28, 0.65), -6px -6px 16px rgba(54, 47, 99, 0.4);
 }
 
 .sideBox div {
   margin-bottom: 8px;
-  color: var(--yellow);
+  color: #38bdf8;
+  border-radius: 10px;
+  background: var(--inset);
+  padding: 6px 10px;
+  box-shadow: inset 4px 4px 10px rgba(13, 10, 28, 0.75), inset -3px -3px 8px rgba(54, 47, 99, 0.35);
 }
 
 .messageBar {
-  border-top: 1px solid var(--green);
   padding: 10px;
   display: flex;
   gap: 10px;
   align-items: center;
+  border-radius: 20px;
+  background: var(--surface);
+  box-shadow: 8px 8px 18px rgba(13, 10, 28, 0.65), -6px -6px 16px rgba(54, 47, 99, 0.4);
 }
 
 #msg {
   flex: 1;
   padding: 10px;
-  background: #111;
-  border: 1px solid var(--green);
-  color: var(--green);
+  background: var(--inset);
+  border-radius: 12px;
+  color: var(--text);
   outline: none;
+  box-shadow: inset 4px 4px 10px rgba(13, 10, 28, 0.75), inset -3px -3px 8px rgba(54, 47, 99, 0.35);
+}
+
+#msg:focus {
+  box-shadow: inset 4px 4px 10px rgba(13, 10, 28, 0.75), inset -3px -3px 8px rgba(54, 47, 99, 0.35), 0 0 12px rgba(157, 78, 221, 0.3);
 }
 
 #sendBtn {
   width: 120px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #7b2cbf 0%, #9d4edd 50%, #c77dff 100%);
+  color: #ffffff;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(157, 78, 221, 0.45);
 }
 
 .bottomBar {
@@ -124,9 +172,10 @@ button:hover {
   justify-content: space-between;
   align-items: center;
   padding: 10px 12px;
-  border-top: 1px solid var(--green);
+  border-radius: 20px;
   position: sticky;
   bottom: 0;
-  background: #050505;
+  background: var(--surface);
   font-size: 12px;
+  box-shadow: 8px 8px 18px rgba(13, 10, 28, 0.65), -6px -6px 16px rgba(54, 47, 99, 0.4);
 }
